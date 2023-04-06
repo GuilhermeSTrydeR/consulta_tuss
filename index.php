@@ -11,12 +11,39 @@
       margin-left: auto;
       margin-right: auto;
       margin-top: 10%;
+      table-layout: fixed
     }
+
+    #id{
+      width: 35px;
+    }
+
+    #exame{
+      width: 600px;
+    }
+
+    #tuss{
+      width: 100px;
+    }
+
+    #vigencia{
+      width: 100px;
+    }
+
+
+
+    td{
+       word-wrap: break-word;
+    }
+
+
+ 
 
     td, th {
       border: 1px solid #dddddd;
       text-align: left;
       padding: 8px;
+      max-width: 100%;
     }
 
     tr:nth-child(even) {
@@ -43,16 +70,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta Tuss</title>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen" />
+    <!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen" />-->
     <script type="text/javascript" src="/js/bootstrap.js"></script>
   </head>
   <body>
     <table>
       <thead>
         <tr>
-          <th>ID</th>
-          <th>EXAME</th>
-          <th>TUSS</th>
+          <th id="id">ID</th>
+          <th id="exame">EXAME</th>
+          <th id="tuss">TUSS</th>
+          <th id="vigencia">VIGÊNCIA</th>
         </tr>
       </thead>
       <?php
@@ -65,11 +93,13 @@
           $id = $linha['id'];
           $exame = $linha['exame'];
           $tuss = $linha['tuss'];
+          $vigencia = $linha['vigencia'];
       ?>
       <tr >
         <td><?php echo $id ?></td>
         <td><?php echo $exame ?></td>
         <td><?php echo $tuss ?></td>
+        <td><?php echo $vigencia ?></td>
       </tr>
       <?php 
         }
