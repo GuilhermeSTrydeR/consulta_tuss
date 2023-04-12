@@ -17,20 +17,27 @@
         /* margin-top: 12%; */
         table-layout: fixed;
       }
+
       #div_table{
-        overflow: auto; width: 1600px; height: 615px;
+        overflow: auto; width: 1600px; height: 620px;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 10%; 
+        margin-top: 40px;
+
+        
       }
       thead{
         overflow-y: auto;
+       
       }
+
       thead th{
-      position: sticky;
+        position: sticky;
         top: 0;
         font-size: 14px;
+        
       }
+
       #id{
         width: 80px;
       }
@@ -70,6 +77,7 @@
         text-align: left;
         padding: 8px;
         max-width: 100%;
+        
       }
       tr:nth-child(even) {
         /* laranja unimed com transparencia */
@@ -82,8 +90,9 @@
       tr th{
         text-align: center;
         /* verde unimed com transparencia */
-        background-color: #00995d;
+        background-color: rgb(244, 121, 32);
         color: white;
+       
       }
       /* 
       #busca{
@@ -91,15 +100,26 @@
         margin-right: auto;
       } */
       #botao_pesquisa{
-        margin-top: -3%;
-        margin-left: 63%;
-        position: absolute;
+     
+        left: 9.2%;
+        width: 30%;
+        position: fixed;
+      
       }
       p{
         text-align: center;
       }
+      #titulo{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+        font-size: 68px;
+        
+        margin: auto;
+        
+      }
+   
       #res_query p{
         margin: 25px;
+
       }
       #paginas{
         padding-top: 15px;
@@ -112,6 +132,32 @@
       red{
         color: red !important;
       }
+
+      #cabecalho{
+        background-color: #00995d; color: white;
+        max-height: 120px;
+      }
+      #corpo{
+        margin-top: 25px;
+      }
+      #rodape{
+        font-size: 11px;
+        color: grey;
+        float: right;
+        margin: 30px;
+        margin-bottom: -10px;
+      }
+
+      #imagens{
+        
+        width: 100%;
+      }
+
+      .direita{
+        float: right !important;
+      }
+
+
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -121,6 +167,21 @@
     <script type="text/javascript" src="/js/bootstrap.js"></script>
   </head>
   <body>
+    <div class="col">
+      <div class="row" id="cabecalho">
+        <div id="imagens">
+          <img src="/imagens/consulta_tuss.png" alt="" height="70">
+          <img src="/imagens/Sem título.png" alt="" height="60" class="direita">
+
+        </div>
+
+        
+      </div>
+      <div class="row" id="corpo">
+
+  
+
+
     <!-- botao de pesquisar e seu form-->
     <div id="botao_pesquisa">
       <!-- o $PHP_SELF serve para enviar o post para a mesma pagina em questao, fazendo assim passar por post algo e receber na propria pagina -->
@@ -130,7 +191,7 @@
           $pesquisa = $_POST['pesquisa'];
         ?>
         <div class="input-group mb-3">
-          <input type="text" name="pesquisa" class="form-control" value="" placeholder="Pesquisar" aria-label="Pesquisa" aria-describedby="basic-addon2">
+          <input type="text" name="pesquisa" class="form-control" value="" placeholder="Pesquisar Código TUSS ou Descrição" aria-label="Pesquisa" aria-describedby="basic-addon2">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
           </div>
@@ -141,7 +202,7 @@
     <div id="div_table">
       <table>
         <thead>
-          <tr>
+          <tr >
             <!-- <th id="id">ID</th>RETIRAR O ID -->
             <th id="tuss">TUSS</th><!--CODIGO-->
             <th id="descricao">DESCRIÇÃO</th> <!--NOME-->
@@ -163,7 +224,12 @@
           //n sera o fator de porcentagem da query que dera exibido (0 - 100)
           $limiteQuery = (($n * $iTotal) / 100);
           // id like '%" . $pesquisa . "%' or  vigencia like '%" . $pesquisa . "%'
-          $sql = "SELECT * FROM servicos WHERE Descricao LIKE '%$pesquisa%' OR tuss like '%$pesquisa%' ORDER BY Descricao";
+          if(!$pesquisa){
+            $sql = "SELECT * FROM servicos WHERE Descricao LIKE '%$pesquisa%' OR tuss like '%$pesquisa%' ORDER BY Descricao LIMIT 100";
+          }
+          else{
+            $sql = "SELECT * FROM servicos WHERE Descricao LIKE '%$pesquisa%' OR tuss like '%$pesquisa%' ORDER BY Descricao";
+          }
           $consulta = $pdo->query($sql);
           $i = 0;
           while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
@@ -190,8 +256,12 @@
           }
         ?>
       </table>
+     
     </div>
-    <div id="res_query">
+    
+    
+      </div><!-- fim div row da table -->
+      <div id="res_query">
       <!-- <div id="paginas">
         Paginas:
         <a href='/index.php?n=10'>1</a>
@@ -226,6 +296,10 @@
         //   echo "<p><i>Exibindo <b> $i </b> resultados. Buscando por: <b></b></i></p> ";
         // } 
       ?>
+    </div>
+      <div id="rodape" class="row">
+          <p>Desenvolvido por Unimed Três Corações - Abril 2023</p>
+      </div>
     </div>
   </body>
 </html>
