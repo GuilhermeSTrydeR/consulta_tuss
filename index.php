@@ -10,15 +10,15 @@
       table {
         font-family: arial, sans-serif;
         border-collapse: collapse;
-        width: 120%;
-        max-width: 60%;
+        width: 1550px;
+        /*max-width: 80%;*/
         margin-left: auto;
         margin-right: auto;
         /* margin-top: 12%; */
         table-layout: fixed;
       }
       #div_table{
-        overflow: auto; width: 1300px; height: 615px;
+        overflow: auto; width: 1600px; height: 615px;
         margin-left: auto;
         margin-right: auto;
         margin-top: 10%; 
@@ -29,21 +29,41 @@
       thead th{
       position: sticky;
         top: 0;
+        font-size: 14px;
       }
       #id{
         width: 80px;
       }
-      #exame{
-        width: 1100px;
+      #descricao{
+        width: 700px;
       }
       #tuss{
-        width: 180px;
+        width: 100px;
       }
       #vigencia{
         width: 100px;
       }
+      #prazo_executora{
+        width: 120px;        
+      }
+      #linha_prazo_executora{
+        text-align: center;
+      }
+      #prazo_origem{
+        width: 120px;
+      }
+      #linha_prazo_origem{
+        text-align: center;
+      }
+      #prazo_total{
+        width: 120px;
+      }
+      #linha_prazo_total{
+        text-align: center;
+      }
       td{
         word-wrap: break-word;
+        font-size: 13px;
       }
       td, th {
         border: 1px solid #dddddd;
@@ -53,7 +73,7 @@
       }
       tr:nth-child(even) {
         /* laranja unimed com transparencia */
-        background-color: rgba(244, 121, 32, 0.08);
+        /* background-color: rgba(244, 121, 32, 0.08); */
       }
       tr:nth-last-child(even) {
         /* cinza transparencia */
@@ -73,7 +93,6 @@
       #botao_pesquisa{
         margin-top: -3%;
         margin-left: 63%;
-        display: block;
         position: absolute;
       }
       p{
@@ -111,7 +130,7 @@
           $pesquisa = $_POST['pesquisa'];
         ?>
         <div class="input-group mb-3">
-          <input type="text" name="pesquisa" class="form-control" placeholder="<?php echo $pesquisa; ?>" aria-label="Pesquisa" aria-describedby="basic-addon2">
+          <input type="text" name="pesquisa" class="form-control" value="" placeholder="Pesquisar" aria-label="Pesquisa" aria-describedby="basic-addon2">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
           </div>
@@ -124,13 +143,17 @@
         <thead>
           <tr>
             <!-- <th id="id">ID</th>RETIRAR O ID -->
-            <th id="exame">NOME</th> <!--NOME-->
-            <th id="tuss">CÓDIGO</th><!--CODIGO-->
+            <th id="tuss">TUSS</th><!--CODIGO-->
+            <th id="descricao">DESCRIÇÃO</th> <!--NOME-->
+            <th id="prazo_executora">PRAZO EXECUTORA</th> 
+            <th id="prazo_origem">PRAZO ORIGEM</th> 
+            <th id="prazo_total">PRAZO TOTAL</th> 
+
             <!-- <th id="vigencia">VIGÊNCIA</th>RETIRAR A VIGENCIA -->
           </tr>
         </thead>
         <?php
-          $sql = "SELECT * FROM tuss_procedimentos";
+          $sql = "SELECT * FROM servicos";
           $consulta = $pdo->query($sql);
           $iTotal = 0;
           while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
@@ -140,19 +163,28 @@
           //n sera o fator de porcentagem da query que dera exibido (0 - 100)
           $limiteQuery = (($n * $iTotal) / 100);
           // id like '%" . $pesquisa . "%' or  vigencia like '%" . $pesquisa . "%'
-          $sql = "SELECT * FROM tuss_procedimentos WHERE  exame LIKE '%$pesquisa%' OR tuss  like '%$pesquisa%' ORDER BY exame";
+          $sql = "SELECT * FROM servicos WHERE Descricao LIKE '%$pesquisa%' OR tuss like '%$pesquisa%' ORDER BY Descricao";
           $consulta = $pdo->query($sql);
           $i = 0;
           while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
           $i += 1;
           // $id = $linha['id'];
-          $exame = $linha['exame'];
-          $tuss = $linha['tuss'];
+          $descricao = $linha['Descricao'];
+          $tuss = $linha['TUSS'];
+          $prazo_executora = $linha['Prazo_Executora'];
+          $prazo_origem = $linha['Prazo_Origem'];
+          $prazo_total = $linha['Prazo_Total'];
+
+          
           // $vigencia = $linha['vigencia'];
         ?>
         <tr>
-          <td><?php echo $exame ?></td>
+        
           <td><?php echo $tuss ?></td>
+          <td><?php echo $descricao ?></td>
+          <td id="linha_prazo_executora"><?php echo $prazo_executora ?></td>
+          <td id="linha_prazo_origem"><?php echo $prazo_origem ?></td>
+          <td id="linha_prazo_total"><?php echo $prazo_total ?></td>
         </tr>
         <?php 
           }
@@ -176,16 +208,16 @@
       <?php          
         //verificacao caso haja mais de um resultado sera exibido uma string no plural para informar os resultados da pesquisa
         if($i == 1 && $pesquisa){
-        echo "<p><i>Exibindo <b> $i </b> resultado. Procurando por: <b>$pesquisa.</b></i></p> ";
+        echo "<p><i>Exibindo <b>$i</b> resultado de <b>$iTotal</b>. Procurando por: <b>$pesquisa.</b></i></p> ";
         }
         elseif($i == 1 && !$pesquisa){
-        echo "<p><i>Exibindo <b> $i </b> resultado. Procurando por: <b>Tudo.</b></i></p> ";
+        echo "<p><i>Exibindo <b> $i </b> resultado de <b>$iTotal</b>. Procurando por: <b>Tudo.</b></i></p> ";
         }
         elseif($i > 1 && $pesquisa){
-        echo "<p><i>Exibindo <b> $i </b> resultados. Procurando por: <b>$pesquisa.</b></i></p> ";
+        echo "<p><i>Exibindo <b> $i </b> resultados de <b>$iTotal</b>. Procurando por: <b>$pesquisa.</b></i></p> ";
         }
         elseif($i > 1 && !$pesquisa){
-        echo "<p><i>Exibindo <b> $i </b> resultados. Procurando por: <b>Tudo.</b></i></p> ";
+        echo "<p><i>Exibindo <b> $i </b> resultados de <b>$iTotal</b>. Procurando por: <b>Tudo.</b></i></p> ";
         }
         else{
         echo "<p><i><red>Nenhum resultado foi encontrado! </red>Procurando por: <b>$pesquisa. </b></i></p> ";

@@ -11,7 +11,7 @@
         $pdo = new PDO("mysql:dbname=".$banco."; host".$db, $usuario, $password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = $pdo->query("SELECT * FROM tuss_procedimentos");
+        $sql = $pdo->query("SELECT * FROM servicos");
         $sql->execute();
 
         // verificar o numero de registro cadastrados no banco
