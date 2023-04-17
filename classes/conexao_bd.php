@@ -1,9 +1,16 @@
 <?php
-
-    $db="localhost";
+	
+  /* online
+    $db="64.237.32.5";
+    $usuario="unimedtc_sa";
+    $password="utc1993.";
+    $banco="unimedtc_consultatuss"; */
+	
+	/* local */
+    $db="127.0.0.1";
     $usuario="root";
     $password="";
-    $banco="unimedtc_consultaTuss";
+    $banco="unimedtc_consultatuss";
 
     global $pdo;
 

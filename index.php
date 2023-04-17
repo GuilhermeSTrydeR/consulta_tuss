@@ -1,183 +1,44 @@
 <?php
   // desligar todos os erros e notices nessa pagina
   error_reporting(0);
+  //header('Content-Type: text/html; charset=iso-8859-1');
   include("classes/conexao_bd.php");
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <style>
-      table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 1550px;
-        /*max-width: 80%;*/
-        margin-left: auto;
-        margin-right: auto;
-        /* margin-top: 12%; */
-        table-layout: fixed;
-      }
-
-      #div_table{
-        overflow: auto; width: 1600px; height: 620px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 40px;
-
-        
-      }
-      thead{
-        overflow-y: auto;
-       
-      }
-
-      thead th{
-        position: sticky;
-        top: 0;
-        font-size: 14px;
-        
-      }
-
-      #id{
-        width: 80px;
-      }
-      #descricao{
-        width: 700px;
-      }
-      #tuss{
-        width: 100px;
-      }
-      #vigencia{
-        width: 100px;
-      }
-      #prazo_executora{
-        width: 120px;        
-      }
-      #linha_prazo_executora{
-        text-align: center;
-      }
-      #prazo_origem{
-        width: 120px;
-      }
-      #linha_prazo_origem{
-        text-align: center;
-      }
-      #prazo_total{
-        width: 120px;
-      }
-      #linha_prazo_total{
-        text-align: center;
-      }
-      td{
-        word-wrap: break-word;
-        font-size: 13px;
-      }
-      td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-        max-width: 100%;
-        
-      }
-      tr:nth-child(even) {
-        /* laranja unimed com transparencia */
-        /* background-color: rgba(244, 121, 32, 0.08); */
-      }
-      tr:nth-last-child(even) {
-        /* cinza transparencia */
-        background-color: rgba(128, 128, 128, 0.2);
-      }
-      tr th{
-        text-align: center;
-        /* verde unimed com transparencia */
-        background-color: rgb(244, 121, 32);
-        color: white;
-       
-      }
-      /* 
-      #busca{
-        margin-left: auto;
-        margin-right: auto;
-      } */
-      #botao_pesquisa{
-     
-        left: 9.2%;
-        width: 30%;
-        position: fixed;
       
-      }
-      p{
-        text-align: center;
-      }
-      #titulo{
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
-        font-size: 68px;
-        
-        margin: auto;
-        
-      }
-   
-      #res_query p{
-        margin: 25px;
-
-      }
-      #paginas{
-        padding-top: 15px;
-        font-size: 20px;
-        text-align: center;
-      }
-      #paginas a{
-        color: #00995d;
-      }
-      red{
-        color: red !important;
-      }
-
-      #cabecalho{
-        background-color: #00995d; color: white;
-        max-height: 120px;
-      }
-      #corpo{
-        margin-top: 25px;
-      }
-      #rodape{
-        font-size: 11px;
-        color: grey;
-        float: right;
-        margin: 30px;
-        margin-bottom: -10px;
-      }
-
-      #imagens{
-        
-        width: 100%;
-      }
-
-      .direita{
-        float: right !important;
-      }
-
-
-    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Consulta Tuss</title>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen" />
-    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/tuss.css" media="screen" />
+    <script type="text/javascript" src="tuss/js/bootstrap.js"></script>
   </head>
   <body>
     <div class="col">
       <div class="row" id="cabecalho">
         <div id="imagens">
-          <img src="/imagens/consulta_tuss.png" alt="" height="70">
-          <img src="/imagens/Sem título.png" alt="" height="60" class="direita">
+          
+          <img src="/tuss/imagens/unimedtc_logo.png" alt="" height="50" class="direita margin_direita20">
+          <h1 id="titulo" class="esquerda margin_esquerda10" >CONSULTA TUSS</h1>
+          <!--<img src="/tuss/imagens/consulta_tuss.png" alt="" height="70">-->
 
         </div>
 
         
       </div>
+      <div class="mobile">
+          
+          
+      </div>
+      <div class="mobileText"><p>Esse Aplicativo <br>ainda n�o funciona <br>em dispositivos moveis.<br><br>A Unimed Agradece.</p><br><br><img src="/tuss/imagens/unimedtc_logo.png" alt="" height="50" class="direita margin_direita20"></div>
       <div class="row" id="corpo">
+          
+        
 
   
 
@@ -191,7 +52,7 @@
           $pesquisa = $_POST['pesquisa'];
         ?>
         <div class="input-group mb-3">
-          <input type="text" name="pesquisa" class="form-control" value="" placeholder="Pesquisar Código TUSS ou Descrição" aria-label="Pesquisa" aria-describedby="basic-addon2">
+          <input type="text" name="pesquisa" id="input" class="form-control" value="" placeholder="Pesquisar C�digo TUSS ou Descri��o" aria-label="Pesquisa" aria-describedby="basic-addon2">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
           </div>
@@ -203,14 +64,16 @@
       <table>
         <thead>
           <tr >
-            <!-- <th id="id">ID</th>RETIRAR O ID -->
-            <th id="tuss">TUSS</th><!--CODIGO-->
-            <th id="descricao">DESCRIÇÃO</th> <!--NOME-->
+            <!-- <th id="id">ID</th>-->
+            <th id="tuss">TUSS</th>
+            <th id="descricao">DESCRI��O</th> 
+            <th id="classificacao">CLASSIFICA��O</th> 
+            <th id="DocRacionalizacao">DOC. RACIONALIZ.</th> 
             <th id="prazo_executora">PRAZO EXECUTORA</th> 
             <th id="prazo_origem">PRAZO ORIGEM</th> 
             <th id="prazo_total">PRAZO TOTAL</th> 
 
-            <!-- <th id="vigencia">VIGÊNCIA</th>RETIRAR A VIGENCIA -->
+            <!-- <th id="vigencia">VIGENCIA</th>RETIRAR A VIGENCIA -->
           </tr>
         </thead>
         <?php
@@ -230,6 +93,7 @@
           else{
             $sql = "SELECT * FROM servicos WHERE Descricao LIKE '%$pesquisa%' OR tuss like '%$pesquisa%' ORDER BY Descricao";
           }
+          
           $consulta = $pdo->query($sql);
           $i = 0;
           while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
@@ -237,6 +101,8 @@
           // $id = $linha['id'];
           $descricao = $linha['Descricao'];
           $tuss = $linha['TUSS'];
+          $classificacao = $linha['Classificacao'];
+          $docracionalizacao = $linha['DocRacionalizacao'];
           $prazo_executora = $linha['Prazo_Executora'];
           $prazo_origem = $linha['Prazo_Origem'];
           $prazo_total = $linha['Prazo_Total'];
@@ -246,8 +112,10 @@
         ?>
         <tr>
         
-          <td><?php echo $tuss ?></td>
-          <td><?php echo $descricao ?></td>
+          <td id="linha_tuss"><?php echo $tuss ?></td>
+          <td id="linha_descricao"><?php echo $descricao ?></td>
+          <td id="linha_classificacao"><?php echo $classificacao ?></td>
+          <td id="linha_docracionalizacao"><?php echo $docracionalizacao ?></td>
           <td id="linha_prazo_executora"><?php echo $prazo_executora ?></td>
           <td id="linha_prazo_origem"><?php echo $prazo_origem ?></td>
           <td id="linha_prazo_total"><?php echo $prazo_total ?></td>
@@ -256,26 +124,15 @@
           }
         ?>
       </table>
+      
      
     </div>
+     <div id="res_query">
+  
+
+   
+    <?php          
     
-    
-      </div><!-- fim div row da table -->
-      <div id="res_query">
-      <!-- <div id="paginas">
-        Paginas:
-        <a href='/index.php?n=10'>1</a>
-        <a href='/index.php?n=20'>2</a>
-        <a href='/index.php?n=30'>3</a>
-        <a href='/index.php?n=40'>4</a>
-        <a href='/index.php?n=50'>5</a>
-        <a href='/index.php?n=60'>6</a>
-        <a href='/index.php?n=70'>7</a>
-        <a href='/index.php?n=80'>8</a>
-        <a href='/index.php?n=90'>9</a>
-        <a href='/index.php?n=100'>10</a>
-      </div> -->
-      <?php          
         //verificacao caso haja mais de um resultado sera exibido uma string no plural para informar os resultados da pesquisa
         if($i == 1 && $pesquisa){
         echo "<p><i>Exibindo <b>$i</b> resultado de <b>$iTotal</b>. Procurando por: <b>$pesquisa.</b></i></p> ";
@@ -296,9 +153,14 @@
         //   echo "<p><i>Exibindo <b> $i </b> resultados. Buscando por: <b></b></i></p> ";
         // } 
       ?>
-    </div>
+    
+     </div>
+
+      </div><!-- fim div row do corpo -->
+     
       <div id="rodape" class="row">
-          <p>Desenvolvido por Unimed Três Corações - Abril 2023</p>
+     
+          <p id="rodape_p" class="direita">Desenvolvido por Unimed Tr�s Cora��es</p>
       </div>
     </div>
   </body>
