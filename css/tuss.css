@@ -1,343 +1,370 @@
 
-        @media only screen and (max-device-width: 600px) {
-            table{
-                display: none !important;
-            }
-            #cabecalho{
-                display: none !important;
-            }
-            #corpo{
-                display: none !important;
-            }
-            #rodape{
-                display: none !important;
-            }
+        /*@media only screen and (max-device-width: 600px) {*/
+        /*    table{*/
+        /*        display: none !important;*/
+        /*    }*/
+        /*    #cabecalho{*/
+        /*        display: none !important;*/
+        /*    }*/
+        /*    #corpo{*/
+        /*        display: none !important;*/
+        /*    }*/
+        /*    #rodape{*/
+        /*        display: none !important;*/
+        /*    }*/
             
-            .mobileText{
-                margin-top: 50px;
-                display: block !important;
-            }
+        /*    .mobileText{*/
+        /*        margin-top: 50px;*/
+        /*        display: block !important;*/
+        /*    }*/
             
  
             
-        }
+        /*}*/
         
         
                 
-         @media only screen and (max-device-width: 1366px) {
-                    html{
-                         width: 1152px !important;
-                    }
-                    body{
-                        width: 1152px !important;
+        /* @media only screen and (max-device-width: 1366px) {*/
+        /*            html{*/
+        /*                 width: 1152px !important;*/
+        /*            }*/
+        /*            body{*/
+        /*                width: 1152px !important;*/
                         
-                    }
-                     table{
-                         width: 600px !important;
+        /*            }*/
+        /*             table{*/
+        /*                 width: 600px !important;*/
                          
-                     }
-                     #div_table{
+        /*             }*/
+        /*             #div_table{*/
                         
-                         overflow: auto; width: 900px; height: 300px !important;
+        /*                 overflow: auto; width: 900px; height: 300px !important;*/
                           
-                     }
-                     thead th{
-                         position: sticky;
-                         top: 0;
-                         font-size: 10px !important;
-                     }
+        /*             }*/
+        /*             thead th{*/
+        /*                 position: sticky;*/
+        /*                 top: 0;*/
+        /*                 font-size: 10px !important;*/
+        /*             }*/
                      
-                     #tuss{
-                        width: 70px !important;
-                     }
-                     #descricao{
-                         width: 400px !important;
-                     }
-                     td{
-                        word-wrap: break-word !important;
-                        font-size: 10px !important;
-                      }
-                     #prazo_executora{
-                        width: 120px !important;        
-                      }
+        /*             #tuss{*/
+        /*                width: 70px !important;*/
+        /*             }*/
+        /*             #descricao{*/
+        /*                 width: 400px !important;*/
+        /*             }*/
+        /*             td{*/
+        /*                word-wrap: break-word !important;*/
+        /*                font-size: 10px !important;*/
+        /*              }*/
+        /*             #prazo_executora{*/
+        /*                width: 120px !important;        */
+        /*              }*/
 
-                      #prazo_origem{
-                        width: 120px !important;
-                      }
+        /*              #prazo_origem{*/
+        /*                width: 120px !important;*/
+        /*              }*/
 
-                      #prazo_total{
-                        width: 120px !important;
-                      }
-                      #rodape{
+        /*              #prazo_total{*/
+        /*                width: 120px !important;*/
+        /*              }*/
+        /*              #rodape{*/
                           
-                          width: 100% !important;
-                          height: 50px !important;
-                      }
-                      #rodape_p{
+        /*                  width: 100% !important;*/
+        /*                  height: 50px !important;*/
+        /*              }*/
+        /*              #rodape_p{*/
                        
-                          width: 100% !important;
-                          margin-left: 250px !important;
+        /*                  width: 100% !important;*/
+        /*                  margin-left: 250px !important;*/
                       
-                      }
+        /*              }*/
           
        
-                        #botao_pesquisa{
-                            height: 30px !important;
+        /*                #botao_pesquisa{*/
+        /*                    height: 30px !important;*/
                         
-                            margin-left: 75px !important; 
-                            position: relative !important;
+        /*                    margin-left: 75px !important; */
+        /*                    position: relative !important;*/
                 
-                        }
+        /*                }*/
                           
-                        #cabecalho{
-                            width: 110% !important;
-                            height: 70px !important;
-                        }
-                        #input{
-                            font-size: 10px !important;
-                        }
+        /*                #cabecalho{*/
+        /*                    width: 110% !important;*/
+        /*                    height: 70px !important;*/
+        /*                }*/
+        /*                #input{*/
+        /*                    font-size: 10px !important;*/
+        /*                }*/
                         
-                        #res_query{
-                            font-size: 12px !important; 
+        /*                #res_query{*/
+        /*                    font-size: 12px !important; */
                         
-                        }
+        /*                }*/
 
                       
                                     
  
             
-        }
+        /*}*/
         
-        @media only screen and (max-device-width: 800px) {
-            table{
-                width: 600px !important;
+        /*@media only screen and (max-device-width: 800px) {*/
+        /*    table{*/
+        /*        width: 600px !important;*/
         
                
-            }
+        /*    }*/
             
-            #div_table{
-                width: 700px !important;
-                height: 200px !important;
+        /*    #div_table{*/
+        /*        width: 700px !important;*/
+        /*        height: 200px !important;*/
     
-                margin-left: -400px !important;
-            }
-            #descricao{
-                width: 245px !important;
-            }
-            #botao_pesquisa{
-                margin-top: -20px !important; 
-            }
-            #rodape{
+        /*        margin-left: -400px !important;*/
+        /*    }*/
+        /*    #descricao{*/
+        /*        width: 245px !important;*/
+        /*    }*/
+        /*    #botao_pesquisa{*/
+        /*        margin-top: -20px !important; */
+        /*    }*/
+        /*    #rodape{*/
         
-                width: 500px !important;
-                float: left !important;
-                height: 25px !important;
+        /*        width: 500px !important;*/
+        /*        float: left !important;*/
+        /*        height: 25px !important;*/
          
-            }
+        /*    }*/
             
-            #res_query{
-                margin-top: 10px !important;
-                  margin-left: 10px !important;
-                height: 30px;
+        /*    #res_query{*/
+        /*        margin-top: 10px !important;*/
+        /*          margin-left: 10px !important;*/
+        /*        height: 30px;*/
              
-                position: relative !important;
-                width: 60%;
+        /*        position: relative !important;*/
+        /*        width: 60%;*/
                 
-            }
-            #res_query p{
+        /*    }*/
+        /*    #res_query p{*/
                 
-                width: 50% !important;
+        /*        width: 50% !important;*/
+           
+        /*}*/
+        
+        /*#cabecalho{*/
+        /*    width: 70%;*/
+           
+        /*}*/
+    
+    
+    
+        /*}*/
+    
+        table {
+          /*font-family: arial, sans-serif;*/
+          /*border-collapse: collapse;*/
+          /*width: 1550px;*/
+          /*max-width: 80%;*/
+          /*margin-left: auto;*/
+          /*margin-right: auto;*/
+          /* margin-top: 12%; */
+          /*table-layout: fixed;*/
+          display: block;
+          position: relative;
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;  
+  
+        }
+  
+        #div_table{
+          overflow: auto; width: 2000px; height: 620px;
+          display: block;
+          position: relative;
+    
+   
+        }
+        thead{
+          overflow-y: auto;  
+         
+        }
+  
+        thead th{
+          position: sticky;
+          top: 0;
+          font-size: 14px;  
+          
+        }
+  
+        #id{
+          width: 80px;  
+        } 
+        #descricao{
+          width: 700px;  
+        }
+        #classificacao{
+            width: 130px;  
+        }
+        #tuss{
+          width: 100px;  
+        }
+        #vigencia{
+          width: 100px;  
+        }
+        #prazo_executora{
+          width: 120px;          
+        }
+        #linha_prazo_executora{
+          text-align: center;  
+        }
+        #prazo_origem{
+          width: 120px;  
+        }
+        #linha_prazo_origem{
+          text-align: center;  
+        }
+        #prazo_total{
+          width: 120px;  
+        }
+        #linha_prazo_total{
+          text-align: center;  
+        }
+        td{
+          word-wrap: break-word;
+          font-size: 13px;  
+        }
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+          max-width: 100%;  
+          
+        }
+        tr:nth-child(even) {
+          /* laranja unimed com transparencia */
+          /* background-color: rgba(244, 121, 32, 0.08); */
+        }
+        tr:nth-last-child(even) {
+          /* cinza transparencia */
+          background-color: rgba(128, 128, 128, 0.2);  
+        }
+        tr th{
+          text-align: center;
+          /* verde unimed com transparencia */
+          background-color: rgb(244, 121, 32);
+          color: white;
+          
+        }
+        /* 
+        #busca{
+          margin-left: auto;
+          margin-right: auto;
+        } */
+        #botao_pesquisa{
+       
+          left: 9.2%;
+          width: 60%;
+  
+                 display: block;
+          position: relative;
+         
+        
+        }
+        p{
+          text-align: center;
            
         }
-        
-        #cabecalho{
-            width: 70%;
+        #titulo{
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+          font-size: 42px;
            
-        }
-    
-    
-    
-        }
-    
-      table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 1550px;
-        /*max-width: 80%;*/
-        margin-left: auto;
-        margin-right: auto;
-        /* margin-top: 12%; */
-        table-layout: fixed;
-      }
-
-      #div_table{
-        overflow: auto; width: 1600px; height: 620px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 40px;
-
-        
-      }
-      thead{
-        overflow-y: auto;
-       
-      }
-
-      thead th{
-        position: sticky;
-        top: 0;
-        font-size: 14px;
-        
-      }
-
-      #id{
-        width: 80px;
-      }
-      #descricao{
-        width: 700px;
-      }
-      #classificacao{
-          width: 130px;
-      }
-      #tuss{
-        width: 100px;
-      }
-      #vigencia{
-        width: 100px;
-      }
-      #prazo_executora{
-        width: 120px;        
-      }
-      #linha_prazo_executora{
-        text-align: center;
-      }
-      #prazo_origem{
-        width: 120px;
-      }
-      #linha_prazo_origem{
-        text-align: center;
-      }
-      #prazo_total{
-        width: 120px;
-      }
-      #linha_prazo_total{
-        text-align: center;
-      }
-      td{
-        word-wrap: break-word;
-        font-size: 13px;
-      }
-      td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-        max-width: 100%;
-        
-      }
-      tr:nth-child(even) {
-        /* laranja unimed com transparencia */
-        /* background-color: rgba(244, 121, 32, 0.08); */
-      }
-      tr:nth-last-child(even) {
-        /* cinza transparencia */
-        background-color: rgba(128, 128, 128, 0.2);
-      }
-      tr th{
-        text-align: center;
-        /* verde unimed com transparencia */
-        background-color: rgb(244, 121, 32);
-        color: white;
-       
-      }
-      /* 
-      #busca{
-        margin-left: auto;
-        margin-right: auto;
-      } */
-      #botao_pesquisa{
+          
      
-        left: 9.2%;
-        width: 30%;
-        position: relative;
-      
-      }
-      p{
-        text-align: center;
-      }
-      #titulo{
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
-        font-size: 42px;
+          
+        }
+     
+        #res_query p{
+           font-size: 12px;
+          color: grey;
+          margin: 30px;
+          margin-bottom: -10px;
+          float: left;
+          width: 90%;
+           
+  
+          
+        }
+        #paginas{
+          padding-top: 15px;
+          font-size: 20px;
+          text-align: center;
+           
+        }
+        #paginas a{
+          color: #00995d;
+           
+        }
+        red{
+          color: red !important;
+        }
+  
+        #cabecalho{
+          background-color: #00995d; color: white;
+          max-height: 120px;
+           
+        }
+        #corpo{
+           font-size: 12px;
+          color: grey;
+          margin: 30px;
+          margin-bottom: -10px;
+          float: left;
+          width: 90%;
+           
+        }
+        #rodape{
+           font-size: 12px;
+          color: grey;
+          margin: 30px;
+          margin-bottom: -10px;
+          float: left;
+          width: 90%;
+           
+        }
+  
+        #imagens{
         
-   
+          width: 100%;
+          margin-top: 10px;
+           
+          
+          
+        }
+  
+        .direita{
+          float: right !important;  
+          
+        }
         
-      }
-   
-      #res_query p{
-        margin: 25px;
-        width: 350%;
+        .margin_direita20{
+            margin-right: 20px !important;  
+        }
+        .margin_esquerda10{
+            margin-left: 10px !important;  
+        }
         
-
+        .esquerda{
+          float: left !important;  
+          
+        }
         
-      }
-      #paginas{
-        padding-top: 15px;
-        font-size: 20px;
-        text-align: center;
-      }
-      #paginas a{
-        color: #00995d;
-      }
-      red{
-        color: red !important;
-      }
-
-      #cabecalho{
-        background-color: #00995d; color: white;
-        max-height: 120px;
-      }
-      #corpo{
-        margin-top: 25px;
-      }
-      #rodape{
-        font-size: 12px;
-        color: grey;
-        float: right;
-        margin: 30px;
-        margin-bottom: -10px;
-      }
-
-      #imagens{
-      
-        width: 100%;
-        margin-top: 10px;
+        .meio{
+            left: 50% !important;  
+            right: 50% !important;
+        }
         
-        
-      }
-
-      .direita{
-        float: right !important;
-        
-      }
-      
-      .margin_direita20{
-          margin-right: 20px !important;
-      }
-      .margin_esquerda10{
-          margin-left: 10px !important;
-      }
-      
-      .esquerda{
-        float: left !important;
-        
-      }
-      
-      .meio{
-          left: 50% !important;
-          right: 50% !important;
-      }
-      
-      .mobileText{
-          display: none;
-      }
-
-
+        .mobileText{
+            display: none;  
+        }
+  
+  
+  

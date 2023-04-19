@@ -1,7 +1,7 @@
 <?php
   // desligar todos os erros e notices nessa pagina
   error_reporting(0);
-  //header('Content-Type: text/html; charset=iso-8859-1');
+  header('Content-Type: text/html; charset=iso-8859-1');
   include("classes/conexao_bd.php");
   
 ?>
@@ -14,9 +14,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Consulta Tuss</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/tuss.css" media="screen" />
-    <script type="text/javascript" src="tuss/js/bootstrap.js"></script>
+    <!--bootstrap-->
+    <link rel="stylesheet" type="text/css" href="/tuss/css/bootstrap.css" media="screen" />
+    <!--css do site-->
+    <link rel="stylesheet" type="text/css" href="/tuss/css/tuss.css" media="screen" />
+    <script type="text/javascript" src="/tuss/js/bootstrap.js"></script>
   </head>
   <body>
     <div class="col">
@@ -35,7 +37,7 @@
           
           
       </div>
-      <div class="mobileText"><p>Esse Aplicativo <br>ainda n�o funciona <br>em dispositivos moveis.<br><br>A Unimed Agradece.</p><br><br><img src="/tuss/imagens/unimedtc_logo.png" alt="" height="50" class="direita margin_direita20"></div>
+      <div class="mobileText"><p>Esse Aplicativo <br>ainda não funciona <br>em dispositivos moveis.<br><br>A Unimed Agradece.</p><br><br><img src="/tuss/imagens/unimedtc_logo.png" alt="" height="50" class="direita margin_direita20"></div>
       <div class="row" id="corpo">
           
         
@@ -52,7 +54,7 @@
           $pesquisa = $_POST['pesquisa'];
         ?>
         <div class="input-group mb-3">
-          <input type="text" name="pesquisa" id="input" class="form-control" value="" placeholder="Pesquisar C�digo TUSS ou Descri��o" aria-label="Pesquisa" aria-describedby="basic-addon2">
+          <input type="text" name="pesquisa" id="input" class="form-control" value="" placeholder="Pesquisar Código TUSS ou Descrição" aria-label="Pesquisa" aria-describedby="basic-addon2">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
           </div>
@@ -66,8 +68,8 @@
           <tr >
             <!-- <th id="id">ID</th>-->
             <th id="tuss">TUSS</th>
-            <th id="descricao">DESCRI��O</th> 
-            <th id="classificacao">CLASSIFICA��O</th> 
+            <th id="descricao">DESCRIÇÃO</th> 
+            <th id="classificacao">CLASSIFICAÇÃO</th> 
             <th id="DocRacionalizacao">DOC. RACIONALIZ.</th> 
             <th id="prazo_executora">PRAZO EXECUTORA</th> 
             <th id="prazo_origem">PRAZO ORIGEM</th> 
@@ -159,8 +161,9 @@
       </div><!-- fim div row do corpo -->
      
       <div id="rodape" class="row">
-     
-          <p id="rodape_p" class="direita">Desenvolvido por Unimed Tr�s Cora��es</p>
+        <div class="col"></div>
+        <div class="col-6">Desenvolvido por Unimed Três Corações</div>
+        <div class="col"></div>
       </div>
     </div>
   </body>
