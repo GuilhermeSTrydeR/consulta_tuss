@@ -158,6 +158,28 @@
     
     
         /*}*/
+
+
+                /*'pointer: coarse' significa que se o dispositivo for touch sera usado o estilo abaixo*/
+                @media (pointer: coarse) {
+                  table{
+                display: none !important;
+            }
+            #cabecalho{
+                display: none !important;
+            }
+            #corpo{
+                display: none !important;
+            }
+            #rodape{
+                display: none !important;
+            }
+            
+            .mobileText{
+                margin-top: 50px;
+                display: block !important;
+            }
+        }
     
         table {
           /*font-family: arial, sans-serif;*/
